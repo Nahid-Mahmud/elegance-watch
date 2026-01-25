@@ -36,7 +36,7 @@ export default function WatchScene() {
         watchRef.current,
         { scale: 0.5, rotate: -10, opacity: 0.5 },
         { scale: 1, rotate: 0, opacity: 1, duration: 1 },
-        0
+        0,
       );
 
       // 2. Animate 4 floating background elements (Parallax)
@@ -46,13 +46,13 @@ export default function WatchScene() {
       tl.to(".blob-4", { x: 400, y: -300, scale: 0.8, opacity: 0.2, duration: 1 }, 0);
 
       // 3. Trigger "fade-in" text cards at specific milestones
-      
+
       // Milestone 25%
       tl.fromTo(
         ".card-1",
         { opacity: 0, y: 100, filter: "blur(10px)" },
         { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.2 },
-        0.2
+        0.2,
       );
       tl.to(".card-1", { opacity: 0, y: -100, filter: "blur(10px)", duration: 0.2 }, 0.35);
 
@@ -61,7 +61,7 @@ export default function WatchScene() {
         ".card-2",
         { opacity: 0, y: 100, filter: "blur(10px)" },
         { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.2 },
-        0.45
+        0.45,
       );
       tl.to(".card-2", { opacity: 0, y: -100, filter: "blur(10px)", duration: 0.2 }, 0.6);
 
@@ -70,7 +70,7 @@ export default function WatchScene() {
         ".card-3",
         { opacity: 0, y: 100, filter: "blur(10px)" },
         { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.2 },
-        0.7
+        0.7,
       );
 
       // --- CLOCK LOGIC ---
@@ -98,7 +98,7 @@ export default function WatchScene() {
           ease: "none",
           transformOrigin: "50% 100%",
         });
-        
+
         // The "Ticking" effect for second hand
         // We use a slight overshoot/elastic feel for realism
         gsap.to(secondHandRef.current, {
@@ -117,27 +117,24 @@ export default function WatchScene() {
 
       return () => clearInterval(timer);
     },
-    { scope: container }
+    { scope: container },
   );
 
   return (
-    <section 
-      ref={container} 
+    <section
+      ref={container}
       className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black"
     >
       {/* Parallax Background Elements */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      {/* <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="blob-1 absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px]" />
         <div className="blob-2 absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-indigo-900/10 rounded-full blur-[150px]" />
         <div className="blob-3 absolute top-1/2 left-1/3 w-64 h-64 bg-slate-800/30 rounded-full blur-[80px]" />
         <div className="blob-4 absolute top-10 right-10 w-80 h-80 bg-white/5 rounded-full blur-[100px]" />
-      </div>
+      </div> */}
 
       {/* Main Product Container */}
-      <div 
-        ref={watchRef} 
-        className="relative z-10 w-full max-w-[600px] aspect-square flex items-center justify-center"
-      >
+      <div ref={watchRef} className="relative z-10 w-full max-w-[600px] aspect-square flex items-center justify-center">
         <div className="relative w-full h-full p-12">
           {/* Simple but Elegant SVG Watch Representation */}
           <svg viewBox="0 0 400 400" className="w-full h-full drop-shadow-[0_0_80px_rgba(255,255,255,0.15)]">
@@ -151,7 +148,7 @@ export default function WatchScene() {
             {/* Watch Case */}
             <circle cx="200" cy="200" r="160" fill="url(#caseGradient)" stroke="#333" strokeWidth="2" />
             <circle cx="200" cy="200" r="145" fill="#050505" stroke="#1a1a1a" strokeWidth="4" />
-            
+
             {/* Dial Details */}
             {[...Array(12)].map((_, i) => (
               <line
@@ -165,26 +162,29 @@ export default function WatchScene() {
                 transform={`rotate(${i * 30} 200 200)`}
               />
             ))}
-            
+
             {/* Hands */}
             {/* Hour Hand */}
-            <rect 
+            <rect
               ref={hourHandRef}
-              x="197" y="110" width="6" height="90" rx="3" 
-              fill="#fff" 
+              x="197"
+              y="110"
+              width="6"
+              height="90"
+              rx="3"
+              fill="#fff"
               style={{ filter: "drop-shadow(0 0 5px rgba(255,255,255,0.3))" }}
             />
             {/* Minute Hand */}
-            <rect 
-              ref={minuteHandRef}
-              x="198" y="80" width="4" height="120" rx="2" 
-              fill="#eee" 
-            />
+            <rect ref={minuteHandRef} x="198" y="80" width="4" height="120" rx="2" fill="#eee" />
             {/* Second Hand */}
-            <line 
+            <line
               ref={secondHandRef}
-              x1="200" y1="220" x2="200" y2="70" 
-              stroke="#3b82f6" 
+              x1="200"
+              y1="220"
+              x2="200"
+              y2="70"
+              stroke="#3b82f6"
               strokeWidth="2"
               strokeLinecap="round"
             />
