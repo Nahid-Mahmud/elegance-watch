@@ -184,12 +184,6 @@ pnpm lint
 - **Largest Contentful Paint**: <2.5s
 - **Cumulative Layout Shift**: <0.1
 
-### Bundle Size
-
-- **Initial Bundle**: ~150KB gzipped
-- **Runtime Chunk**: ~50KB for GSAP and React
-- **Images**: Optimized WebP format with lazy loading
-
 ## 🧠 Technical Skills Demonstrated
 
 ### Frontend Development
