@@ -24,19 +24,17 @@ const HeroSection = () => {
           Est. 2024 — Engineering Archive
         </span>
         <h1 className="text-7xl md:text-9xl font-extralight tracking-tighter mb-8 leading-none">
-          The{" "}
-          <span className="font-serif italic font-medium text-blue-400">
-            Aethelgard
-          </span>{" "}
-          <br /> Collection
+          The <span className="font-serif italic font-medium text-blue-400">Aethelgard</span> <br /> Collection
         </h1>
         <p className="text-zinc-400 text-lg md:text-xl max-w-xl mx-auto font-light leading-relaxed">
-          Where <span className="text-white">heritage</span> meets{" "}
-          <span className="text-white italic">hyperscale</span>. A master
-          blueprint for those who define the horizon.
+          Where <span className="text-white">heritage</span> meets <span className="text-white italic">hyperscale</span>
+          . A master blueprint for those who define the horizon.
         </p>
 
-        <button className="mt-12 px-8 py-4 bg-white text-black text-sm font-bold tracking-widest uppercase hover:bg-blue-500 hover:text-white transition-all duration-500 cursor-pointer">
+        <button
+          onClick={() => document.getElementById("collection")?.scrollIntoView({ behavior: "smooth" })}
+          className="mt-12 px-8 py-4 bg-white text-black text-sm font-bold tracking-widest uppercase hover:bg-blue-500 hover:text-white transition-all duration-500 cursor-pointer"
+        >
           Explore the Blueprint
         </button>
       </div>

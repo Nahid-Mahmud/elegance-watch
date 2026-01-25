@@ -40,7 +40,7 @@ export default function PremiumGallery() {
   );
 
   return (
-    <section ref={container} className="bg-black py-40">
+    <section id="collection" ref={container} className="bg-black py-40">
       <div className="max-w-7xl mx-auto px-10">
         <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between">
           <div>
