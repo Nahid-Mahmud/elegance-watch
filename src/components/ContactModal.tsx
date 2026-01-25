@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { toast } from "sonner";
 
 interface ContactModalProps {
   onClose: () => void;
@@ -46,6 +47,13 @@ export default function ContactModal({ onClose }: ContactModalProps) {
     return () => window.removeEventListener("keydown", handleKey);
   }, []);
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission logic here
+    toast.success("Message sent!");
+    handleClose();
+  };
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
@@ -64,7 +72,7 @@ export default function ContactModal({ onClose }: ContactModalProps) {
           ×
         </button>
         <h3 className="text-3xl font-light text-white mb-6 text-center">Contact Concierge</h3>
-        <form className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label className="block text-sm font-medium text-zinc-400 mb-2">Full Name</label>
             <input

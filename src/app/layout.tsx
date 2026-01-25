@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,17 +19,16 @@ export const metadata: Metadata = {
 };
 
 const cormorant = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['300', '400', '600', '700'],
-  style: ['normal', 'italic'],
-  variable: '--font-cormorant',
+  subsets: ["latin"],
+  weight: ["300", "400", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-cormorant",
 });
 
 const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  variable: '--font-space',
+  subsets: ["latin"],
+  variable: "--font-space",
 });
-
 
 export default function RootLayout({
   children,
@@ -41,6 +41,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} ${spaceGrotesk.variable} antialiased`}
       >
         {children}
+        <Toaster duration={3000} position="top-right" closeButton={true} expand richColors />
       </body>
     </html>
   );
