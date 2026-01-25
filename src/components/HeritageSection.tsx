@@ -41,7 +41,9 @@ export default function HeritageSection() {
       {/* Parallax Background */}
       <div className="heritage-bg absolute inset-0 w-full h-[150%] opacity-40 bg-[radial-gradient(circle_at_center,_#111_0%,_#000_100%)]">
         <div className="absolute inset-0 flex items-center justify-center opacity-10">
-          <h2 className="text-[20vw] font-black uppercase tracking-tighter select-none">Heritage</h2>
+          <h2 className="text-[20vw] font-black uppercase tracking-tighter select-none transform -translate-y-4">
+            Heritage
+          </h2>
         </div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-7xl">
           <div className="absolute top-20 left-10 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl animate-pulse" />
