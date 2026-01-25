@@ -31,19 +31,19 @@ export default function WatchScene() {
         },
       });
 
-      // 1. Scale the product up from 0.5 to 1
+      // 1. Scale the product up from a slightly larger initial size to a slightly bigger final size
       tl.fromTo(
         watchRef.current,
-        { scale: 0.5, rotate: -10, opacity: 0.5 },
-        { scale: 1, rotate: 0, opacity: 1, duration: 1 },
+        { scale: 0.75, rotate: -10, opacity: 0.6 },
+        { scale: 1.05, rotate: 0, opacity: 1, duration: 1 },
         0,
       );
 
       // 2. Animate 4 floating background elements (Parallax)
-      tl.to(".blob-1", { x: -300, y: -150, scale: 1.5, opacity: 0.6, duration: 1 }, 0);
-      tl.to(".blob-2", { x: 300, y: 200, scale: 1.2, opacity: 0.4, duration: 1 }, 0);
-      tl.to(".blob-3", { x: -200, y: 300, scale: 1.8, rotate: 90, opacity: 0.5, duration: 1 }, 0);
-      tl.to(".blob-4", { x: 400, y: -300, scale: 0.8, opacity: 0.2, duration: 1 }, 0);
+      // tl.to(".blob-1", { x: -300, y: -150, scale: 1.5, opacity: 0.6, duration: 1 }, 0);
+      // tl.to(".blob-2", { x: 300, y: 200, scale: 1.2, opacity: 0.4, duration: 1 }, 0);
+      // tl.to(".blob-3", { x: -200, y: 300, scale: 1.8, rotate: 90, opacity: 0.5, duration: 1 }, 0);
+      // tl.to(".blob-4", { x: 400, y: -300, scale: 0.8, opacity: 0.2, duration: 1 }, 0);
 
       // 3. Trigger "fade-in" text cards at specific milestones
 
