@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
+import { SmoothScroll } from "@/components/SmoothScroll";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,6 +42,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} ${spaceGrotesk.variable} antialiased`}
       >
+        <SmoothScroll />
         {children}
         <Toaster duration={3000} position="top-right" closeButton={true} expand richColors />
       </body>
