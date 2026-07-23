@@ -22,7 +22,8 @@ A high-performance, interactive luxury watch landing page built with modern web 
 
 - **ESLint** - Code linting and quality
 - **Babel Plugin React Compiler** - React optimization
-- **pnpm** - Fast package manager
+- **npm** - Package manager
+- **Docker** - Containerized deployment
 
 ### Typography
 
@@ -161,6 +162,24 @@ pnpm build
 # Type checking
 pnpm lint
 ```
+
+### Docker
+
+```bash
+# Build image
+npm run docker:build
+
+# Start container (detached)
+npm run docker:up
+
+# View logs
+npm run docker:logs
+
+# Stop container
+npm run docker:down
+```
+
+App runs on `http://localhost:3000`. Config: [Dockerfile](Dockerfile), [docker-compose.yml](docker-compose.yml).
 
 ### Build Optimization
 
